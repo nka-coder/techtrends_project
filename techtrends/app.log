@@ -1,0 +1,6 @@
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:05/10/2021, 14:46:01, "New Article page" retrieved!
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2021 14:46:01] "[37mGET /create HTTP/1.1[0m" 200 -
+INFO:app:05/10/2021, 14:46:17, Article "ds" newly created!
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2021 14:46:17] "[32mPOST /create HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2021 14:46:17] "[37mGET / HTTP/1.1[0m" 200 -
