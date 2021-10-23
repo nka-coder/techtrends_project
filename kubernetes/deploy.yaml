@@ -16,7 +16,7 @@ spec:
       maxSurge: 25%
       maxUnavailable: 25%
     type: RollingUpdate
-  template:`
+  template:
     metadata:
       labels:
         app: techtrends

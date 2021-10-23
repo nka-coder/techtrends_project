@@ -1,10 +1,18 @@
 namespace:
   name: prod
  
-replicaCount: 5
-
 service:
   port: 7111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
+
+image:
+  repository: nkacoder/techtrends
+  tag: latest
+  pullPolicy: Always
+
+replicaCount: 5
 
 resources:
   requests:
@@ -14,5 +22,9 @@ resources:
     memory: "256Mi"
     cpu: "500m"
 
-image:
-  pullPolicy: Always
+containerPort: 3111
+
+livenessProbe:
+  path: /healthz
+readinessProbe:
+  path: /healthz

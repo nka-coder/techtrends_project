@@ -1,11 +1,17 @@
 namespace:
   name: staging
  
-replicaCount: 3
 
 service:
   port: 7111
 
+image:
+  repository: nkacoder/techtrends
+  tag: latest
+  pullPolicy: IfNotPresent
+  
+replicaCount: 3
+ 
 resources:
   requests:
     memory: "90Mi"
@@ -13,4 +19,11 @@ resources:
   limits:
     memory: "128Mi"
     cpu: "500m"
+    
+containerPort: 3111
+
+livenessProbe:
+  path: /healthz
+readinessProbe:
+  path: /healthz
     
