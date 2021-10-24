@@ -109,5 +109,9 @@ def metrics():
 
 # start the application on port 3111
 if __name__ == "__main__":
-   logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+   
+   stdout_handler = logging.StreamHandler(sys.stdout)
+   stderr_handler = logging.StreamHandler(sys.stderr)
+   handlers = [stderr_handler, stdout_handler]
+   logging.basicConfig(handlers=handlers, level=logging.DEBUG)
    app.run(host='0.0.0.0', port='3111')

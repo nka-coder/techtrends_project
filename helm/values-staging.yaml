@@ -1,9 +1,12 @@
 namespace:
   name: staging
  
-
+ 
 service:
-  port: 7111
+  port: 5111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
 
 image:
   repository: nkacoder/techtrends
@@ -24,6 +27,8 @@ containerPort: 3111
 
 livenessProbe:
   path: /healthz
+  port: 3111
 readinessProbe:
   path: /healthz
+  port: 3111
     
